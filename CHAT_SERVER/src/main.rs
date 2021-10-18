@@ -28,7 +28,6 @@ fn main() {
 
                 match socket.read_exact(&mut buff) {
                     Ok(_) => {
-                        println!("{:?}", buff);
                         let msg = buff.into_iter().take_while(|&x| x != 0).collect::<Vec<_>>();
                         let msg = String::from_utf8(msg).expect("Le message n'est pas en utf8");
 
